@@ -2,12 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 /**
- * Word represents a word and displays the
- * word using the ideas discussed in the 
- * Reibadailty article from New Scientist.
- * 
- * @author (..........................) 
- * @version (..........................)
+ * @author ( Sowrov  ) 
+ * @version ( 0.1 )
  */
 public class Word{
     String word;
@@ -23,8 +19,7 @@ public class Word{
             String first = word.substring(0,2);
             int length = word.length();
             String middle = word.substring(2,length-2);
-            
-            // change this next line so it randomizes 
+             
             ArrayList<Character> shuffle = new ArrayList<Character>();
             for(int i=0;i<middle.length();i++) {
             	shuffle.add(middle.charAt(i));
@@ -34,12 +29,9 @@ public class Word{
             if (shuffle != null)
             {
             	middle = shuffle.toString().replaceAll("[\\[\\]]" ,"").replaceAll(", ", "");
-            	//middle = shuffle.toString();
-                //middle = middle.substring(1, middle.length()-1);
             }
             
             
-            // the middle letters of the word
             String scrambled=middle;
             String last = word.substring(length-2);
             return first+scrambled+last;
